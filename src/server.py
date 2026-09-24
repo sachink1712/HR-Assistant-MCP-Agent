@@ -3,7 +3,7 @@ import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from typing import Any, Dict
 from utils import seed_services
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer
 from hrms import *
 from email_sender import EmailSender
 from dotenv import load_dotenv
@@ -17,7 +17,7 @@ email_sender = EmailSender(
         use_tls=True,
     )
 
-mcp = FastMCP("hr-assistant-agent")
+mcp = MCPServer("hr-assistant-agent")
 
 employee_manager = EmployeeManager()
 leave_manager = LeaveManager()
